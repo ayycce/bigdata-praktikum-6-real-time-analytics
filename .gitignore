@@ -1,0 +1,40 @@
+# ==========================================
+# 🐍 Python & Virtual Environment
+# ==========================================
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ==========================================
+# ⚡ Apache Spark & Hadoop (YANG BIKIN BERAT)
+# ==========================================
+spark-warehouse/
+derby.log
+metastore_db/
+
+# ==========================================
+# 📁 Data Output Project (JANGAN DI-UPLOAD)
+# ==========================================
+# Mengabaikan semua data JSON yang di-generate
+stream_data/
+
+# Mengabaikan file Parquet dan Checkpoints hasil proses Spark
+data/serving/
+data/checkpoints/
+
+# ==========================================
+# 🛠️ Editor & OS Settings
+# ==========================================
+.vscode/
+.DS_Store
+
+venv/
+.venv/
+stream_data/
+data/serving/
+logs/
+__pycache__/
