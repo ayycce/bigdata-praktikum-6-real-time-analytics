@@ -4,12 +4,12 @@
 ---
 
 ## 📌 Gambaran Proyek
-Repositori ini merupakan hasil pengerjaan **Praktikum 5** untuk mata kuliah **Big Data Technology**. [cite_start]Fokus utama proyek ini adalah memperluas arsitektur data dengan menambahkan domain baru, yaitu **Smart Transportation** [cite: 33-34]. 
+Repositori ini merupakan hasil pengerjaan **Praktikum 5** untuk mata kuliah **Big Data Technology**. Fokus utama proyek ini adalah memperluas arsitektur data dengan menambahkan domain baru, yaitu **Smart Transportation**. 
 
 Proyek ini tidak hanya sekadar mengolah dan menampilkan data, tetapi telah di- *upgrade* menjadi **Decision-Oriented System** yang mampu:
-- [cite_start]Menghasilkan *insight* secara *real-time*[cite: 24, 59].
-- [cite_start]Memberikan peringatan (*alert*) otomatis berdasarkan kondisi data[cite: 25, 60].
-- [cite_start]Mendukung pengambilan keputusan operasional, taktis, dan strategis dengan cepat[cite: 26, 716].
+- Menghasilkan *insight* secara *real-time*.
+- Memberikan peringatan (*alert*) otomatis berdasarkan kondisi data.
+- Mendukung pengambilan keputusan operasional, taktis, dan strategis dengan cepat.
 
 ---
 
@@ -17,16 +17,16 @@ Proyek ini tidak hanya sekadar mengolah dan menampilkan data, tetapi telah di- *
 Teknologi yang digunakan mencerminkan arsitektur data *streaming* di industri:
 
 - ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) **Python 3.10+** Bahasa utama untuk *generator* data, *analytics layer*, dan visualisasi *dashboard*.
-- [cite_start]![Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?style=flat&logo=Apache%20Spark&logoColor=white) **PySpark (Structured Streaming)** *Engine* utama untuk memproses aliran data secara *real-time*[cite: 49].
-- [cite_start]![Parquet](https://img.shields.io/badge/Parquet-000000?style=flat&logo=apache&logoColor=white) **Apache Parquet** Format penyimpanan kolumnar (*Data Lake*) untuk efisiensi analitik cepat [cite: 50-51].
-- [cite_start]![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white) **Pandas** *Library* untuk pemrosesan dan perhitungan metrik analitik (*Analytics Engine*)[cite: 139].
-- [cite_start]![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white) **Streamlit** *Framework* untuk membangun *dashboard* analitik *real-time* yang interaktif[cite: 230].
+- [Apache Spark](https://img.shields.io/badge/Apache%20Spark-E25A1C?style=flat&logo=Apache%20Spark&logoColor=white) **PySpark (Structured Streaming)** *Engine* utama untuk memproses aliran data secara *real-time*.
+- [Parquet](https://img.shields.io/badge/Parquet-000000?style=flat&logo=apache&logoColor=white) **Apache Parquet** Format penyimpanan kolumnar (*Data Lake*) untuk efisiensi analitik cepat.
+- [Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white) **Pandas** *Library* untuk pemrosesan dan perhitungan metrik analitik (*Analytics Engine*).
+- [Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white) **Streamlit** *Framework* untuk membangun *dashboard* analitik *real-time* yang interaktif.
 - ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat&logo=linux&logoColor=black) **WSL (Ubuntu)** *Environment* pengembangan berbasis Linux untuk performa Big Data yang stabil.
 
 ---
 
 ## 📁 Struktur Direktori
-[cite_start]Struktur *pipeline* dipisahkan secara modular berdasarkan domain untuk menjaga kerapian [cite: 62-64]:
+Struktur *pipeline* dipisahkan secara modular berdasarkan domain untuk menjaga kerapian:
 
 ```text
 bigdata-project-1/
