@@ -4,12 +4,12 @@
 ---
 
 ## 📌 Gambaran Proyek
-Repositori ini merupakan hasil pengerjaan **Praktikum 6** untuk mata kuliah **Big Data Technology**. [cite_start]Melanjutkan fondasi dari praktikum sebelumnya, proyek ini berfokus pada **Visualisasi Data Skala Besar (Large-Scale Streaming Visualization)**[cite: 740]. 
+Repositori ini merupakan hasil pengerjaan **Praktikum 6** untuk mata kuliah **Big Data Technology**. Melanjutkan fondasi dari praktikum sebelumnya, proyek ini berfokus pada **Visualisasi Data Skala Besar (Large-Scale Streaming Visualization)**. 
 
-[cite_start]Dengan mengambil *use case* **Smart City** (Monitoring kemacetan *real-time*, deteksi lonjakan *traffic*, dan analisis distribusi kendaraan) [cite: 741-745], sistem dioptimasi menggunakan teknik:
-- [cite_start]**Window Aggregation:** Menyederhanakan data dengan agregasi waktu (per menit) agar visualisasi tetap ringan [cite: 771-775].
-- [cite_start]**Data Downsampling:** Mengambil *subset* data terbaru agar proses *rendering* tidak *overload* [cite: 776-777].
-- [cite_start]**Incremental Visualization:** Memperbarui data secara dinamis tanpa *lag* [cite: 778-779].
+Dengan mengambil *use case* **Smart City** (Monitoring kemacetan *real-time*, deteksi lonjakan *traffic*, dan analisis distribusi kendaraan) , sistem dioptimasi menggunakan teknik:
+- **Window Aggregation:** Menyederhanakan data dengan agregasi waktu (per menit) agar visualisasi tetap ringan.
+- **Data Downsampling:** Mengambil *subset* data terbaru agar proses *rendering* tidak *overload* .
+- **Incremental Visualization:** Memperbarui data secara dinamis tanpa *lag* .
 
 ---
 
