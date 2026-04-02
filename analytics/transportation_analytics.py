@@ -82,3 +82,15 @@ def detect_anomaly(df):
         return pd.DataFrame()
     # contoh: fare tinggi di atas 80000 dianggap anomali
     return df[df["fare"] > 80000]
+
+# ==========================================
+# NEW (PRAKTIKUM 6)
+# WINDOW AGGREGATION
+# ==========================================
+def traffic_per_window(df):
+    # Agregasi jumlah trip per menit (windowing)
+    # Digunakan untuk visualisasi skala besar (efficient rendering)
+    if df.empty:
+        return None
+    df["timestamp"] = pd.to_datetime(df["timestamp"])
+    return df.set_index("timestamp").resample("1min").size()

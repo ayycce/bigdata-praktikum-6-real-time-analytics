@@ -18,7 +18,8 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🚗 Smart Transportation Real-Time Analytics")
+# Judul di-update menandakan ini versi Optimized
+st.title("🚗 Smart Transportation Real-Time Analytics (Big Data Optimized)")
 
 # AUTO REFRESH
 REFRESH_INTERVAL = 5
@@ -27,7 +28,7 @@ placeholder = st.empty()
 # MAIN LOOP
 while True:
     with placeholder.container():
-        # Geny Fix: Modul asli typo parah di bagian ini
+        # LOAD DATA
         df = ta.load_data(DATA_PATH)
         
         if df.empty:
@@ -38,7 +39,13 @@ while True:
         # PREPROCESS
         df = ta.preprocess(df)
         
-        # METRICS
+        # ==========================================
+        # OPTIMASI BIG DATA (DOWNSAMPLING)
+        # Ambil subset data untuk visualisasi agar tidak berat
+        # ==========================================
+        df_sample = df.tail(1000) 
+        
+        # METRICS (Tetap hitung dari df asli agar totalnya akurat)
         try:
             metrics = ta.compute_metrics(df)
         except Exception as e:
@@ -72,27 +79,41 @@ while True:
             
         st.divider()
         
-        # VISUALISASI
+        # ==========================================
+        # VISUALISASI SKALA BESAR
+        # ==========================================
         try:
             col1, col2 = st.columns(2)
+            
+            # 1. TRAFFIC WINDOW (NEW PRAKTIKUM 6)
+            st.subheader("⏱️ Real-Time Traffic (Window Aggregation)")
+            traffic_window = ta.traffic_per_window(df)
+            if traffic_window is not None:
+                st.line_chart(traffic_window)
+                
+            # 2. FARE PER LOCATION (Pakai df_sample)
             with col1:
                 st.subheader("💰 Fare per Location")
-                st.bar_chart(ta.fare_per_location(df))
+                st.bar_chart(ta.fare_per_location(df_sample))
+                
+            # 3. VEHICLE DISTRIBUTION (Pakai df_sample)
             with col2:
                 st.subheader("🛵 Vehicle Distribution")
-                st.bar_chart(ta.vehicle_distribution(df))
+                st.bar_chart(ta.vehicle_distribution(df_sample))
                 
-            st.subheader("📈 Mobility Trend")
-            st.line_chart(ta.mobility_trend(df))
+            # 4. MOBILITY TREND (DOWNSAMPLED - Pakai df_sample)
+            st.subheader("📈 Mobility Trend (Optimized)")
+            st.line_chart(ta.mobility_trend(df_sample))
+            
         except Exception as e:
             st.warning(f"Visualization error: {e}")
             
         st.divider()
         
-        # ANOMALY
+        # ANOMALY (Pakai df_sample agar cepat)
         try:
             st.subheader("⚠️ Abnormal Trips")
-            anomaly_df = ta.detect_anomaly(df)
+            anomaly_df = ta.detect_anomaly(df_sample)
             if not anomaly_df.empty:
                 st.dataframe(anomaly_df.tail(20))
             else:
@@ -102,8 +123,8 @@ while True:
             
         st.divider()
         
-        # LIVE DATA
-        st.subheader("📡 Live Trip Data")
-        st.dataframe(df.tail(50))
+        # LIVE DATA (LIMITED)
+        st.subheader("📡 Live Trip Data (Limited View)")
+        st.dataframe(df_sample.tail(50))
         
         time.sleep(REFRESH_INTERVAL)
